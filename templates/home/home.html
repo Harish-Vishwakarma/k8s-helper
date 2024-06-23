@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">More info on Docker Images</h1>
+<!--        <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>-->
+        <p>
+          <a href="#" class="btn btn-primary my-2">Configuration help</a>
+          <a href="#" class="btn btn-secondary my-2">How it works</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<div class="album py-5 bg-body-tertiary text-center container ">
+    <div class="container ">
+        <div class="row">
+
+  <div class="col-sm-6" style="width: 20rem;">
+      <img src="{{url_for('static', filename='/images/trivy.avif')}}" class="card-img-top" alt="...">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Trivy vulnerabilities</h5>
+            <p class="card-text">Trivy is a opensource project by "Aqua security",Which will be deployed in your <strong>k8s
+                cluster </strong> and gives vulnerability details of the cluster. </p>
+             <p>
+          <a href="#"  class="btn btn-primary my-2">Configuration</a>
+           <a href="{{url_for('trivy_dashboard')}}" class="btn btn-secondary my-2">Dashboard</a>
+
+        </p>
+        </div>
+    </div>
+  </div>
+
+
+            <div class="col-sm-6" style="width: 20rem;">
+      <img src="{{url_for('static', filename='/images/docker.jpeg')}}" class="card-img-top" alt="...">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Analyse Images</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+
+            <div class="col-sm-6" style="width: 20rem;">
+      <img src="{{url_for('static', filename='/images/docker.jpeg')}}" class="card-img-top" alt="...">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Create Resources</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+
+           <div class="col-sm-6" style="width: 20rem;">
+      <img src="{{url_for('static', filename='/images/docker.jpeg')}}" class="card-img-top" alt="...">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Place Holder</h5>
+            <p class="card-text">Place holder for new ideas </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

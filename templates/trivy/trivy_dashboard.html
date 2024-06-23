@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="album py-5 bg-body-tertiary text-center container ">
+  {% for d in data %}
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+       data-bs-target="#collapseOne{{ d }}" aria-expanded="false" >
+        podname : {{ d }} &nbsp; &nbsp;
+
+        <span class="badge text-bg-danger">CriticalCount : {{ data[d]['checks_data']['checks_summary']['criticalCount'] }}</span>&nbsp; &nbsp;
+        <span class="badge text-bg-warning">HighCount : {{ data[d]['checks_data']['checks_summary']['highCount'] }}</span>&nbsp; &nbsp;
+        <span class="badge text-bg-danger">info : {{data[d]['checks_data']['checks_summary']['mediumCount'] }}</span>&nbsp; &nbsp;
+        <span class="badge text-bg-secondary">LowCount : {{data[d]['checks_data']['checks_summary']['lowCount']}}</span>
+
+      </button>
+      
+    </h2>
+    <div id="collapseOne{{ d }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <div>   Namespace : {{ data[d]["namespace"] }} </div>
+         
+          {% for checks in  data[d]['checks_data']['checks'] %} 
+
+          <div class="card text-center" >
+            <div class="card-body text-bg-secondary mb-3">
+    
+          
+          <ul class="list-group">
+            {% for check in  checks %} 
+            <li class="list-group-item">{{ check }} : {{ checks[check]}}</li>
+            {% endfor %}
+          </ul>
+            </div>
+          </div>
+      
+          {% endfor %}
+
+
+      
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+</div>
+
+
+
+{% endblock %}

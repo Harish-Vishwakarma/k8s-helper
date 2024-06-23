@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="b-example-divider"></div>
+
+<div class="my-5">
+  <img  src="{{url_for('.static', filename='/images/idk.png')}}" class="rounded mx-auto d-block" alt="...">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Page Not Found</h1>
+      <p class="col-lg-8 mx-auto lead"> Something went wrong : This page is not available
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+
+{% endblock %}
+
